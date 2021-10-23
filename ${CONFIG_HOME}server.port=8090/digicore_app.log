@@ -1,0 +1,23 @@
+Wed 20-10-2021 21:01:27.347 INFO  - [  restartedMain] DigicoreBankAppApplication : Starting DigicoreBankAppApplication using Java 1.8.0_131 on DESKTOP-2N2OQGT with PID 11712 (C:\Users\Uche Kamani\Documents\STS4Projects\digicore-bank-app\target\classes started by Uche Kamani in C:\Users\Uche Kamani\Documents\STS4Projects\digicore-bank-app)
+Wed 20-10-2021 21:01:27.348 INFO  - [  restartedMain] DigicoreBankAppApplication : No active profile set, falling back to default profiles: default
+Wed 20-10-2021 21:01:27.978 INFO  - [  restartedMain] TomcatWebServer           : Tomcat initialized with port(s): 8090 (http)
+Wed 20-10-2021 21:01:27.984 INFO  - [  restartedMain] Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8090"]
+Wed 20-10-2021 21:01:27.985 INFO  - [  restartedMain] StandardService           : Starting service [Tomcat]
+Wed 20-10-2021 21:01:27.986 INFO  - [  restartedMain] StandardEngine            : Starting Servlet engine: [Apache Tomcat/9.0.53]
+Wed 20-10-2021 21:01:28.045 INFO  - [  restartedMain] [/]                       : Initializing Spring embedded WebApplicationContext
+Wed 20-10-2021 21:01:28.046 INFO  - [  restartedMain] ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 694 ms
+Wed 20-10-2021 21:01:28.244 INFO  - [  restartedMain] PropertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+Wed 20-10-2021 21:01:28.303 INFO  - [  restartedMain] OptionalLiveReloadServer  : LiveReload server is running on port 35729
+Wed 20-10-2021 21:01:28.350 INFO  - [  restartedMain] UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2701eaab-11a4-4b59-86ce-416cd6f9e2cb
+
+Wed 20-10-2021 21:01:28.363 INFO  - [  restartedMain] DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e42ad7c, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b80e6e0, org.springframework.security.web.header.HeaderWriterFilter@500bba0, org.springframework.security.web.csrf.CsrfFilter@41036712, org.springframework.security.web.authentication.logout.LogoutFilter@108e0d80, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4caa8c5b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@f1d2e22, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1dae0f56, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6a19cd9b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17f8987b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1725ec9f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57e80ec, org.springframework.security.web.session.SessionManagementFilter@11613829, org.springframework.security.web.access.ExceptionTranslationFilter@343d1338, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e1faa08]
+Wed 20-10-2021 21:01:28.402 INFO  - [  restartedMain] Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8090"]
+Wed 20-10-2021 21:01:28.404 INFO  - [  restartedMain] TomcatWebServer           : Tomcat started on port(s): 8090 (http) with context path ''
+Wed 20-10-2021 21:01:28.405 INFO  - [  restartedMain] DocumentationPluginsBootstrapper : Context refreshed
+Wed 20-10-2021 21:01:28.407 INFO  - [  restartedMain] DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+Wed 20-10-2021 21:01:28.413 INFO  - [  restartedMain] ApiListingReferenceScanner : Scanning for api listing references
+Wed 20-10-2021 21:01:28.423 INFO  - [  restartedMain] DigicoreBankAppApplication : Started DigicoreBankAppApplication in 1.172 seconds (JVM running for 94.708)
+Wed 20-10-2021 21:01:28.427 INFO  - [  restartedMain] ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+Wed 20-10-2021 21:01:29.143 INFO  - [on(2)-127.0.0.1] SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.

@@ -1,0 +1,47 @@
+Wed 20-10-2021 20:56:17.354 INFO  - [kground-preinit] Version                   : HV000001: Hibernate Validator 6.2.0.Final
+Wed 20-10-2021 20:56:17.425 INFO  - [  restartedMain] DigicoreBankAppApplication : Starting DigicoreBankAppApplication using Java 1.8.0_131 on DESKTOP-2N2OQGT with PID 7272 (C:\Users\Uche Kamani\Documents\STS4Projects\digicore-bank-app\target\classes started by Uche Kamani in C:\Users\Uche Kamani\Documents\STS4Projects\digicore-bank-app)
+Wed 20-10-2021 20:56:17.435 INFO  - [  restartedMain] DigicoreBankAppApplication : No active profile set, falling back to default profiles: default
+Wed 20-10-2021 20:56:17.545 INFO  - [  restartedMain] DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+Wed 20-10-2021 20:56:17.547 INFO  - [  restartedMain] DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+Wed 20-10-2021 20:56:20.434 INFO  - [  restartedMain] TomcatWebServer           : Tomcat initialized with port(s): 8080 (http)
+Wed 20-10-2021 20:56:20.456 INFO  - [  restartedMain] Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+Wed 20-10-2021 20:56:20.457 INFO  - [  restartedMain] StandardService           : Starting service [Tomcat]
+Wed 20-10-2021 20:56:20.457 INFO  - [  restartedMain] StandardEngine            : Starting Servlet engine: [Apache Tomcat/9.0.53]
+Wed 20-10-2021 20:56:20.601 INFO  - [  restartedMain] [/]                       : Initializing Spring embedded WebApplicationContext
+Wed 20-10-2021 20:56:20.601 INFO  - [  restartedMain] ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3051 ms
+Wed 20-10-2021 20:56:22.010 INFO  - [  restartedMain] PropertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+Wed 20-10-2021 20:56:22.239 INFO  - [  restartedMain] OptionalLiveReloadServer  : LiveReload server is running on port 35729
+Wed 20-10-2021 20:56:22.438 INFO  - [  restartedMain] UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2ded759d-ccb3-46f8-b794-f099e1775d0d
+
+Wed 20-10-2021 20:56:22.626 INFO  - [  restartedMain] DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@255d4005, org.springframework.security.web.context.SecurityContextPersistenceFilter@59c97aa4, org.springframework.security.web.header.HeaderWriterFilter@238c0a8a, org.springframework.security.web.csrf.CsrfFilter@5b878b39, org.springframework.security.web.authentication.logout.LogoutFilter@2f5f0361, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c3c0cef, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4069edfb, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@14be0bc6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@74149bc6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1658a2ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74655303, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4424683c, org.springframework.security.web.session.SessionManagementFilter@45a152bc, org.springframework.security.web.access.ExceptionTranslationFilter@56ef23b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@cd296b7]
+Wed 20-10-2021 20:56:22.804 INFO  - [  restartedMain] Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+Wed 20-10-2021 20:56:22.832 INFO  - [  restartedMain] TomcatWebServer           : Tomcat started on port(s): 8080 (http) with context path ''
+Wed 20-10-2021 20:56:22.834 INFO  - [  restartedMain] DocumentationPluginsBootstrapper : Context refreshed
+Wed 20-10-2021 20:56:22.972 INFO  - [  restartedMain] DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+Wed 20-10-2021 20:56:23.022 INFO  - [  restartedMain] ApiListingReferenceScanner : Scanning for api listing references
+Wed 20-10-2021 20:56:23.057 INFO  - [  restartedMain] DigicoreBankAppApplication : Started DigicoreBankAppApplication in 6.673 seconds (JVM running for 9.942)
+Wed 20-10-2021 20:57:00.865 INFO  - [  restartedMain] DigicoreBankAppApplication : Starting DigicoreBankAppApplication using Java 1.8.0_131 on DESKTOP-2N2OQGT with PID 7272 (C:\Users\Uche Kamani\Documents\STS4Projects\digicore-bank-app\target\classes started by Uche Kamani in C:\Users\Uche Kamani\Documents\STS4Projects\digicore-bank-app)
+Wed 20-10-2021 20:57:00.866 INFO  - [  restartedMain] DigicoreBankAppApplication : No active profile set, falling back to default profiles: default
+Wed 20-10-2021 20:57:01.990 INFO  - [  restartedMain] TomcatWebServer           : Tomcat initialized with port(s): 8080 (http)
+Wed 20-10-2021 20:57:01.993 INFO  - [  restartedMain] Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+Wed 20-10-2021 20:57:01.993 INFO  - [  restartedMain] StandardService           : Starting service [Tomcat]
+Wed 20-10-2021 20:57:01.994 INFO  - [  restartedMain] StandardEngine            : Starting Servlet engine: [Apache Tomcat/9.0.53]
+Wed 20-10-2021 20:57:02.041 INFO  - [  restartedMain] [/]                       : Initializing Spring embedded WebApplicationContext
+Wed 20-10-2021 20:57:02.041 INFO  - [  restartedMain] ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1167 ms
+Wed 20-10-2021 20:57:02.398 INFO  - [  restartedMain] PropertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+Wed 20-10-2021 20:57:02.519 INFO  - [  restartedMain] OptionalLiveReloadServer  : LiveReload server is running on port 35729
+Wed 20-10-2021 20:57:02.610 INFO  - [  restartedMain] UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b029e784-2a45-44dc-8d98-b823c205a2c0
+
+Wed 20-10-2021 20:57:02.627 INFO  - [  restartedMain] DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@713a786c, org.springframework.security.web.context.SecurityContextPersistenceFilter@44f7727c, org.springframework.security.web.header.HeaderWriterFilter@795c98f3, org.springframework.security.web.csrf.CsrfFilter@6f522b0b, org.springframework.security.web.authentication.logout.LogoutFilter@5093a033, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@14da1b3b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4c6750fb, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@26f2076, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@326ac09d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73a215c0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e248047, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46a8f0c3, org.springframework.security.web.session.SessionManagementFilter@3a031c44, org.springframework.security.web.access.ExceptionTranslationFilter@6ccb752f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@776098cd]
+Wed 20-10-2021 20:57:02.724 INFO  - [  restartedMain] Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+Wed 20-10-2021 20:57:02.728 INFO  - [  restartedMain] TomcatWebServer           : Tomcat started on port(s): 8080 (http) with context path ''
+Wed 20-10-2021 20:57:02.733 INFO  - [  restartedMain] DocumentationPluginsBootstrapper : Context refreshed
+Wed 20-10-2021 20:57:02.735 INFO  - [  restartedMain] DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+Wed 20-10-2021 20:57:02.750 INFO  - [  restartedMain] ApiListingReferenceScanner : Scanning for api listing references
+Wed 20-10-2021 20:57:02.767 INFO  - [  restartedMain] DigicoreBankAppApplication : Started DigicoreBankAppApplication in 2.101 seconds (JVM running for 49.651)
+Wed 20-10-2021 20:57:02.773 INFO  - [  restartedMain] ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+Wed 20-10-2021 20:58:40.518 INFO  - [on(2)-127.0.0.1] SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
