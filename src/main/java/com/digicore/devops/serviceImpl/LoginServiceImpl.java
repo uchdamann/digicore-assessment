@@ -37,6 +37,7 @@ public class LoginServiceImpl implements LoginService {
 		
 		JwtUser userDetails = JwtUser.builder().customer(customer).build();
 		String token = jwtTokenUtil.generateToken(userDetails);
+		
 		if (token == null || token.isEmpty()) {
 			throw new TokenNotFoundException();
 		}

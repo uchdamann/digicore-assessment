@@ -23,6 +23,9 @@ import com.digicore.devops.models.Transaction;
 import com.digicore.devops.services.AccountServices;
 import com.digicore.devops.utilities.AccountUtil;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class AccountServicesImpl implements AccountServices {
 	@Autowired
@@ -34,7 +37,9 @@ public class AccountServicesImpl implements AccountServices {
 
 	@Override
 	public ResponseDTO<AccountQueryDTO> queryAccount(String accountNumber) {
-		accountUtil.checkAcctNoLength(accountNumber);
+		log.info("--->> Inside queryAccount method");
+		
+		accountUtil.validateAcctNoLength(accountNumber);
 
 		AccountQueryDTO accountQueryDTO = null;
 		
@@ -46,7 +51,7 @@ public class AccountServicesImpl implements AccountServices {
 
 	@Override
 	public ResponseDTO<List<Transaction>> getAccountStatement(String accountNumber) {
-		accountUtil.checkAcctNoLength(accountNumber);
+		accountUtil.validateAcctNoLength(accountNumber);
 		List<Transaction> transactions = null;
 		
 		transactions = accountUtil.validateAccount(accountNumber)
@@ -58,7 +63,7 @@ public class AccountServicesImpl implements AccountServices {
 	@Override
 	public ResponseDTO<String> deposit(DepositDTO depositDTO) {
 		BigDecimal depositAmount = new BigDecimal(depositDTO.getAmount());
-		accountUtil.checkAcctNoLength(depositDTO.getAccountNumber());
+		accountUtil.validateAcctNoLength(depositDTO.getAccountNumber());
 		accountUtil.validateDepositAmount(depositAmount);
 		
 		BigDecimal balance = accountUtil.validateAccount(depositDTO.getAccountNumber())
@@ -74,7 +79,7 @@ public class AccountServicesImpl implements AccountServices {
 	@Override
 	public ResponseDTO<String> withdraw(WithdrawalDTO withdrawalDTO) {
 		BigDecimal withdrawnAmount = new BigDecimal(withdrawalDTO.getWithdrawnAmount());
-		accountUtil.checkAcctNoLength(withdrawalDTO.getAccountNumber());
+		accountUtil.validateAcctNoLength(withdrawalDTO.getAccountNumber());
 		accountUtil.validateAmount(withdrawnAmount);
 		
 		AccountDetails accountDetails = accountUtil.validateAccount(withdrawalDTO.getAccountNumber())

@@ -47,9 +47,15 @@ public class AccountUtil {
 	}
 
 //	TODO: TBT
-	public void checkAcctNoLength(String accountNumber) {
-		if (accountNumber.length() != prop.getAccountNumberLength())
+	public void validateAcctNoLength(String accountNumber) {
+		log.info("--->> Validating account number length for {}", accountNumber);
+
+		if (accountNumber.length() != prop.getAccountNumberLength()) {
+			log.info("--->> Account number must be " + prop.getAccountNumberLength() + " digits");
 			throw new InvalidAccountException("Account number must be " + prop.getAccountNumberLength() + " digits");
+		}
+
+		log.info("--->> Finished account number length validation: Length - {}", accountNumber.length());
 	}
 
 //	TODO: TBT
@@ -57,11 +63,11 @@ public class AccountUtil {
 		if (amount.doubleValue() > prop.getMaxDepositAmount()) {
 			throw new FinancialRestrictionException("Deposit cannot be more than " + prop.getMaxDepositAmount());
 		}
-		
+
 		validateAmount(amount);
 	}
-	
-	public void validateAmount (BigDecimal amount) {
+
+	public void validateAmount(BigDecimal amount) {
 		if (amount.doubleValue() < prop.getMinAmount()) {
 			throw new FinancialRestrictionException("Amount cannot be less than " + prop.getMinAmount());
 		}
@@ -98,12 +104,12 @@ public class AccountUtil {
 
 		return customer;
 	}
-	
+
 //	TODO: TBT
-	public boolean isUnique (String accountNumber) {
+	public boolean isUnique(String accountNumber) {
 		boolean isUnique = true;
 		Customer[] customers = AccountStub.getCustomers();
-		
+
 		for (Customer c : customers) {
 			AccountDetails ad = c.getAccountDetails();
 			if (ad.getAccountNumber().equals(accountNumber)) {
@@ -111,22 +117,21 @@ public class AccountUtil {
 				break;
 			}
 		}
-		
-		return isUnique;		
+
+		return isUnique;
 	}
-	
-//TODO: TBT
-	public void createAccount (final CreateAccountDTO createAccountDTO, String accountNumber) {
+
+	//TODO: TBT
+	public void createAccount(final CreateAccountDTO createAccountDTO, String accountNumber) {
 		Transaction transaction = Transaction.builder().transactionDate(new Date())
-				.transactionType(TransactionType.DEPOSIT)
-				.amount(new BigDecimal(createAccountDTO.getInitialDeposit())).build();
+				.transactionType(TransactionType.DEPOSIT).amount(new BigDecimal(createAccountDTO.getInitialDeposit()))
+				.build();
 		BasicInfo basicInfo = BasicInfo.builder().firstName(createAccountDTO.getAccountName())
 				.lastName(createAccountDTO.getAccountName()).build();
 		AccountDetails accountDetails = AccountDetails.builder().accountNumber(accountNumber)
-				.accountType(AccountType.SAVINGS)
-				.password(encoder.encode(createAccountDTO.getAccountPassword()))
+				.accountType(AccountType.SAVINGS).password(encoder.encode(createAccountDTO.getAccountPassword()))
 				.transactions(Arrays.asList(transaction)).build();
-				
-		Customer.builder().accountDetails(accountDetails).basicInfo(basicInfo).role(CUSTOMER).build();		
+
+		Customer.builder().accountDetails(accountDetails).basicInfo(basicInfo).role(CUSTOMER).build();
 	}
 }

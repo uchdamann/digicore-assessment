@@ -44,11 +44,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
 			.authorizeRequests()
-			.antMatchers("/api/digicore/login/*", "/v2/*", "/swagger-ui.html", 
-					"/swagger-resources/**", "/configuration/ui", "/webjars/**").permitAll()
 			.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 			.antMatchers("/").permitAll()
-			.antMatchers("/api/digicore/v1/**").hasAuthority("ROLE_CUSTOMER");
+			.antMatchers("/api/digicore/v1/**").hasAuthority("ROLE_CUSTOMER")
+			.antMatchers("/api/digicore/login/*", "/v2/*", "/swagger-ui.html", 
+					"/swagger-resources/**", "/configuration/ui", "/webjars/**")
+			.permitAll();
 
 		httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 	}

@@ -23,17 +23,21 @@ import com.digicore.devops.dtos.WithdrawalDTO;
 import com.digicore.devops.models.Transaction;
 import com.digicore.devops.services.AccountServices;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @ResponseStatus(HttpStatus.OK)
 @RequestMapping("api/digicore/v1")
 @CrossOrigin(maxAge = 3600, origins = "*")
 public class CustomerController {
-	
 	@Autowired
 	private AccountServices accountServices;
 	
 	@GetMapping("/account-info/{accountNumber}")
 	public ResponseDTO<AccountQueryDTO> queryAccount(@PathVariable String accountNumber){
+		log.info("--->>> Querying account number {} started", accountNumber);
+		
 		return accountServices.queryAccount(accountNumber);
 	}
 	
