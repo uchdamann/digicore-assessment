@@ -36,7 +36,6 @@ public class AccountUtil {
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 
-//	TODO: TBT
 	public AccountQueryDTO generateAccountQueryDTO(Customer customer) {
 		BasicInfo basicInfo = customer.getBasicInfo();
 		AccountDetails accountDetails = customer.getAccountDetails();
@@ -46,7 +45,6 @@ public class AccountUtil {
 				accountDetails.getBalance().doubleValue());
 	}
 
-//	TODO: TBT
 	public void validateAcctNoLength(String accountNumber) {
 		log.info("--->> Validating account number length for {}", accountNumber);
 
@@ -54,11 +52,8 @@ public class AccountUtil {
 			log.info("--->> Account number must be " + prop.getAccountNumberLength() + " digits");
 			throw new InvalidAccountException("Account number must be " + prop.getAccountNumberLength() + " digits");
 		}
-
-		log.info("--->> Finished account number length validation: Length - {}", accountNumber.length());
 	}
 
-//	TODO: TBT
 	public void validateDepositAmount(BigDecimal amount) {
 		if (amount.doubleValue() > prop.getMaxDepositAmount()) {
 			throw new FinancialRestrictionException("Deposit cannot be more than " + prop.getMaxDepositAmount());
@@ -73,7 +68,6 @@ public class AccountUtil {
 		}
 	}
 
-//	TODO: TBT
 	public String generateAccountNumber() {
 		StringBuilder sb = new StringBuilder();
 		SecureRandom random = new SecureRandom();
