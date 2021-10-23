@@ -15,8 +15,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.digicore.devops.exceptions.TokenNotFoundException;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -33,11 +31,11 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 		String username;
 		String token = request.getHeader("Authorization");
 		
-		if (token == null || token.isEmpty()) {
-			throw new TokenNotFoundException();
+		if (token != null) {
+			username = jwtTokenUtil.getUsernameFromToken(token.replace("Bearer ", ""));
+		} else {
+			username = jwtTokenUtil.getUsernameFromToken(token);
 		}
-		
-		username = jwtTokenUtil.getUsernameFromToken(token.replace("Bearer ", ""));
 		log.info("--->> Checking authentication for user " + username);
 
 		if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {

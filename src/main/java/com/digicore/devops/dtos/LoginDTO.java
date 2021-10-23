@@ -15,7 +15,7 @@ public class LoginDTO {
 	private String accountNumber;
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
-	private String accountName;
+	private String accountPassword;
 	
 
 }

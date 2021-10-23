@@ -14,7 +14,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.digicore.devops.security.JwtAuthenticationEntryPoint;
@@ -45,18 +44,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
 			.authorizeRequests()
+			.antMatchers("/api/digicore/login/*", "/v2/*", "/swagger-ui.html", 
+					"/swagger-resources/**", "/configuration/ui", "/webjars/**").permitAll()
 			.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 			.antMatchers("/").permitAll()
-			.antMatchers("/api/digicore/v1/**").hasAuthority("ROLE_CUSTOMER")
-			.antMatchers("/api/digicore/login/*", "/v2/*", "/swagger-ui.html", 
-					"/swagger-resources/**", "/configuration/ui", "/webjars/**")
-			.permitAll();
+			.antMatchers("/api/digicore/v1/**").hasAuthority("ROLE_CUSTOMER");
 
 		httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 	}
 
 	@Bean
-	public PasswordEncoder passwordEncoder() {
+	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
