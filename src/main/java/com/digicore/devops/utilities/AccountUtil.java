@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.digicore.devops.config.ConfigProcessor;
@@ -32,6 +33,8 @@ public class AccountUtil {
 
 	@Autowired
 	private ConfigProcessor prop;
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 
 //	TODO: TBT
 	public AccountQueryDTO generateAccountQueryDTO(Customer customer) {
@@ -121,6 +124,7 @@ public class AccountUtil {
 				.lastName(createAccountDTO.getAccountName()).build();
 		AccountDetails accountDetails = AccountDetails.builder().accountNumber(accountNumber)
 				.accountType(AccountType.SAVINGS)
+				.password(encoder.encode(createAccountDTO.getAccountPassword()))
 				.transactions(Arrays.asList(transaction)).build();
 				
 		Customer.builder().accountDetails(accountDetails).basicInfo(basicInfo).role(CUSTOMER).build();		

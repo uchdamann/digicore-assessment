@@ -36,6 +36,11 @@ public class ExceptionHandlerConfig {
 	public ResponseDTO<String> handleInvalidAccountException(InvalidAccountException ex) {
 		return ResponseDTO.newInstance(ERROR.getCode(), ERROR.getMessage(), ex.getMessage(), ERROR.getSuccess());
 	}
+	
+	@ExceptionHandler(TokenNotFoundException.class)
+	public ResponseDTO<String> handleTokenNotFoundException(TokenNotFoundException ex) {
+		return ResponseDTO.newInstance(ERROR.getCode(), ERROR.getMessage(), ex.getMessage(), ERROR.getSuccess());
+	}
 
 	@ExceptionHandler(FinancialRestrictionException.class)
 	public ResponseDTO<String> handleFinancialRestrictionException(FinancialRestrictionException ex) {

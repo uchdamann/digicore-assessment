@@ -17,4 +17,6 @@ public class ConfigProcessor {
 	private Double minAmount;
 	private String accountCharacters;
 	private Double minApprovedBalance;
+	private String jwtSecret;
+	private int jwtExpiration;
 }

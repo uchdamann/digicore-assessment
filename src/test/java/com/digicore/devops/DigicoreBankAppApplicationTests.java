@@ -3,9 +3,11 @@ package com.digicore.devops;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.digicore.devops.config.ConfigProcessor;
 import com.digicore.devops.utilities.AccountUtil;
@@ -19,6 +21,14 @@ class DigicoreBankAppApplicationTests {
 	private AccountUtil accountUtil;
 	@Autowired
 	private ConfigProcessor prop;
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
+	
+	@BeforeEach
+	public void init() {
+		log.info("--->> Encode " + encoder.encode("1234"));
+	}
 
 	@Test
 	public void generateAccountTest() {
@@ -30,4 +40,6 @@ class DigicoreBankAppApplicationTests {
 		assertEquals(prop.getAccountNumberLength(), accountNumber1.length());
 		assertNotEquals(accountNumber1, accountNumber2);
 	}
+	
+	
 }

@@ -60,19 +60,24 @@ public class AccountStub {
 				.country(NIGERIA).state(LAGOS).phoneNumber("08123456789").build();
 		
 		accountDetails[0]=AccountDetails.builder().accountNumber("2314323453")
-				.accountType(SAVINGS).balance(BigDecimal.ONE).password("1234")
+				.accountType(SAVINGS).balance(BigDecimal.ONE)
+				.password("$2a$10$NxDDVCGFfzImjfkeJXlZbuz8VuvDqftyJfOy//Yx/bj/SGrKJsvN2")
 				.transactions(Arrays.asList(transactions[0])).build();
 		accountDetails[1]=AccountDetails.builder().accountNumber("3314323453")
-				.accountType(CURRENT).balance(BigDecimal.ONE).password("1234")
+				.accountType(CURRENT).balance(BigDecimal.ONE)
+				.password("$2a$10$NxDDVCGFfzImjfkeJXlZbuz8VuvDqftyJfOy//Yx/bj/SGrKJsvN2")
 				.transactions(Arrays.asList(transactions[1])).build();
 		accountDetails[2]=AccountDetails.builder().accountNumber("4314323453")
-				.accountType(ELITE).balance(BigDecimal.ONE).password("1234")
+				.accountType(ELITE).balance(BigDecimal.ONE)
+				.password("$2a$10$NxDDVCGFfzImjfkeJXlZbuz8VuvDqftyJfOy//Yx/bj/SGrKJsvN2")
 				.transactions(Arrays.asList(transactions[2])).build();
 		accountDetails[3]=AccountDetails.builder().accountNumber("5314323453")
-				.accountType(PREMIUM).balance(new BigDecimal(150000)).password("1234")
+				.accountType(PREMIUM).balance(new BigDecimal(150000))
+				.password("$2a$10$NxDDVCGFfzImjfkeJXlZbuz8VuvDqftyJfOy//Yx/bj/SGrKJsvN2")
 				.transactions(Arrays.asList(transactions[3])).build();
 		accountDetails[4]=AccountDetails.builder().accountNumber("6314323453")
-				.accountType(FIXED_DEPOSIT).balance(BigDecimal.ONE).password("1234")
+				.accountType(FIXED_DEPOSIT).balance(BigDecimal.ONE)
+				.password("$2a$10$NxDDVCGFfzImjfkeJXlZbuz8VuvDqftyJfOy//Yx/bj/SGrKJsvN2")
 				.transactions(Arrays.asList(transactions)).build();
 		
 		customers[0]=Customer.builder().accountDetails(accountDetails[0])

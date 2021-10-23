@@ -1,6 +1,7 @@
 package com.digicore.devops.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.digicore.devops.config.ConfigProcessor;
@@ -24,12 +25,12 @@ import com.digicore.devops.utilities.AccountUtil;
 
 @Service
 public class AccountServicesImpl implements AccountServices {
-
 	@Autowired
 	private AccountUtil accountUtil;
-	
 	@Autowired
 	private ConfigProcessor prop;
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 
 	@Override
 	public ResponseDTO<AccountQueryDTO> queryAccount(String accountNumber) {
@@ -78,7 +79,8 @@ public class AccountServicesImpl implements AccountServices {
 		
 		AccountDetails accountDetails = accountUtil.validateAccount(withdrawalDTO.getAccountNumber())
 				.getAccountDetails();
-		if (!accountDetails.getPassword().equals(withdrawalDTO.getAccountPassword())) {
+		if (!encoder.matches(withdrawalDTO.getAccountPassword(), 
+				accountDetails.getPassword())) {
 			throw new PasswordMismatchException();
 		}
 		
