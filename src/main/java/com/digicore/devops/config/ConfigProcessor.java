@@ -14,5 +14,7 @@ public class ConfigProcessor {
 	private String threadPrefix;
 	private int accountNumberLength;
 	private Double maxDepositAmount;
-	private Double minDepositAmount;
+	private Double minAmount;
+	private String accountCharacters;
+	private Double minApprovedBalance;
 }

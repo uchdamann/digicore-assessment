@@ -68,7 +68,7 @@ public class AccountStub {
 				.accountType(ELITE).balance(BigDecimal.ONE).password("1234")
 				.transactions(Arrays.asList(transactions[2])).build();
 		accountDetails[3]=AccountDetails.builder().accountNumber("5314323453")
-				.accountType(PREMIUM).balance(BigDecimal.ONE).password("1234")
+				.accountType(PREMIUM).balance(new BigDecimal(150000)).password("1234")
 				.transactions(Arrays.asList(transactions[3])).build();
 		accountDetails[4]=AccountDetails.builder().accountNumber("6314323453")
 				.accountType(FIXED_DEPOSIT).balance(BigDecimal.ONE).password("1234")
