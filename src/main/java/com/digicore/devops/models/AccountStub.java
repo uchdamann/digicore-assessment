@@ -9,6 +9,7 @@ import java.util.List;
 import com.digicore.devops.enums.TransactionType;
 
 import static com.digicore.devops.enums.TransactionType.*;
+import static com.digicore.devops.enums.Roles.*;
 
 import lombok.Getter;
 
@@ -75,15 +76,15 @@ public class AccountStub {
 				.transactions(Arrays.asList(transactions)).build();
 		
 		customers[0]=Customer.builder().accountDetails(accountDetails[0])
-				.basicInfo(basicInfos[0]).contactInfo(contactInfos[0]).build();
+				.basicInfo(basicInfos[0]).contactInfo(contactInfos[0]).role(CUSTOMER).build();
 		customers[1]=Customer.builder().accountDetails(accountDetails[1])
-				.basicInfo(basicInfos[1]).contactInfo(contactInfos[1]).build();
+				.basicInfo(basicInfos[1]).contactInfo(contactInfos[1]).role(CUSTOMER).build();
 		customers[2]=Customer.builder().accountDetails(accountDetails[2])
-				.basicInfo(basicInfos[2]).contactInfo(contactInfos[2]).build();
+				.basicInfo(basicInfos[2]).contactInfo(contactInfos[2]).role(CUSTOMER).build();
 		customers[3]=Customer.builder().accountDetails(accountDetails[3])
-				.basicInfo(basicInfos[3]).contactInfo(contactInfos[3]).build();
+				.basicInfo(basicInfos[3]).contactInfo(contactInfos[3]).role(CUSTOMER).build();
 		customers[4]=Customer.builder().accountDetails(accountDetails[4])
-				.basicInfo(basicInfos[4]).contactInfo(contactInfos[4]).build();
+				.basicInfo(basicInfos[4]).contactInfo(contactInfos[4]).role(CUSTOMER).build();
 				
 	}
 	

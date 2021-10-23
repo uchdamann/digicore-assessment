@@ -27,7 +27,7 @@ import com.digicore.devops.services.AccountServices;
 @ResponseStatus(HttpStatus.OK)
 @RequestMapping("api/digicore/v1")
 @CrossOrigin(maxAge = 3600, origins = "*")
-public class HomeController {
+public class CustomerController {
 	
 	@Autowired
 	private AccountServices accountServices;

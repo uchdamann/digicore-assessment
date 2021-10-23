@@ -108,7 +108,10 @@ public class AccountServicesImpl implements AccountServices {
 			throw new FinancialRestrictionException(MINIMUM_OPENING_BALANCE
 					+ String.valueOf(prop.getMinApprovedBalance()));
 		}
-			
-		return null;
+		
+		accountUtil.createAccount(createAccountDTO, accountNumber);
+		
+		return ResponseDTO.newInstance(SUCCESS.getCode(), SUCCESS.getMessage(), 
+				ACCOUNT_CREATED.getMessage(), SUCCESS.getSuccess());
 	}
 }

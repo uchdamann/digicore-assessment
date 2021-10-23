@@ -1,13 +1,20 @@
 package com.digicore.devops.utilities;
 
+import static com.digicore.devops.enums.Roles.CUSTOMER;
+
 import java.math.BigDecimal;
 import java.security.SecureRandom;
+import java.util.Arrays;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.digicore.devops.config.ConfigProcessor;
 import com.digicore.devops.dtos.AccountQueryDTO;
+import com.digicore.devops.dtos.CreateAccountDTO;
+import com.digicore.devops.enums.AccountType;
+import com.digicore.devops.enums.TransactionType;
 import com.digicore.devops.exceptions.AccountDetailsException;
 import com.digicore.devops.exceptions.FinancialRestrictionException;
 import com.digicore.devops.exceptions.InvalidAccountException;
@@ -15,6 +22,7 @@ import com.digicore.devops.models.AccountDetails;
 import com.digicore.devops.models.AccountStub;
 import com.digicore.devops.models.BasicInfo;
 import com.digicore.devops.models.Customer;
+import com.digicore.devops.models.Transaction;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -102,5 +110,19 @@ public class AccountUtil {
 		}
 		
 		return isUnique;		
+	}
+	
+//TODO: TBT
+	public void createAccount (final CreateAccountDTO createAccountDTO, String accountNumber) {
+		Transaction transaction = Transaction.builder().transactionDate(new Date())
+				.transactionType(TransactionType.DEPOSIT)
+				.amount(new BigDecimal(createAccountDTO.getInitialDeposit())).build();
+		BasicInfo basicInfo = BasicInfo.builder().firstName(createAccountDTO.getAccountName())
+				.lastName(createAccountDTO.getAccountName()).build();
+		AccountDetails accountDetails = AccountDetails.builder().accountNumber(accountNumber)
+				.accountType(AccountType.SAVINGS)
+				.transactions(Arrays.asList(transaction)).build();
+				
+		Customer.builder().accountDetails(accountDetails).basicInfo(basicInfo).role(CUSTOMER).build();		
 	}
 }
